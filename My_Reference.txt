@@ -1,0 +1,415 @@
+------------- some notis --------------------
+
+- error stop code .
+
+
+------------- syntax ------------------------
+
+print("hello python2") 
+
+------------- data type  --------------------
+
+# All Data in Python is Object #
+
+[1, 2, 3, 4, 5]  list => List
+
+(1, 2, 3, 4, 5)  tuple => Tuple
+
+{"One": 1, "Two": 2, "Three": 3} dict => Dictionary
+{"amin","faqiri","love"} => set
+
+-------------  Variables  --------------------
+
+name = "amin"
+
+a, b, c = 1, 2, 3
+
+------------- Escape Sequences Characters --------------------
+
+# \b => Back Space
+# \newline => Escape New Line + \
+# \\ => Escape Back Slash
+# \' => Escape Single Quotes
+# \" => Escape Double Quotes
+# \n => Line Feed
+# \r => Carriage Return => abcdefRajae\r123456 => 123456Rajae .
+# \t => Horizontal Tab
+# \x.. => Character Hex Value => \x4F = O .
+
+------------- Concatenation --------------------
+
+all_var = var1 + " " + var2
+
+print("amin" + 1) => Error 
+print(True + 1) => 2
+-----------------------------------------------------------------------------------------
+--------------------------------- Indexing And Slicing  ---------------------------------
+-----------------------------------------------------------------------------------------
+Python Use Zero Based Indexing ( Index Start From Zero ) :
+
+var1[start:end:step] 
+
+var1 = "AminE" 
+
+print(var1[0]) => "A"
+print(var1[-1]) => "E"
+slice part : print(var1[0:3])
+print(var1[:]) => Full String .
+print(var1[::2]) => Full String => AiE 
+
+
+-----------------------------------------------------------------------------------------
+---------------------------------------------- Strings  ---------------------------------
+-----------------------------------------------------------------------------------------
+
+
+myStringOne = 'Single'  Or "Double "
+
+Multi line string : ''' ''' or """ """
+
+myStringFive = '''First
+Second 'Test' "Test" ////
+Third'''
+
+-----------------------------------------------------------------------------------------
+---------------------------------------------- Strings Methods  -------------------------
+-----------------------------------------------------------------------------------------
+# len(var) => number character .
+# strip() lstrip() rstrip() => remove spacing or special character from first or last or both .
+# title() => first character and after number charcter is Capitalise .
+# capitalize()
+# upper()
+# lower()
+# zfill => add zero to string number "5".zfill(2) => 05 
+
+# split(seperatore,max-splite) rsplit() => change to list 
+# center() => "amin".center(10,"@") => @@@amin@@@
+# count("char",star,end) => count number of specifice character
+# swapcase() => Convert uppercase characters to lowercase and lowercase characters to uppercase.
+# startswith() => check if string start with specifique string 
+# endswith() => check if string End with specifique string 
+
+# index(SubString, Start, End) => return index of 'string' : returen error
+# find(SubString, Start, End) => like index method : returen -1 if error
+# rjust(Width, Fill Char) ljust(Width, Fill Char) => add char in string : #######amin or amin#########
+# splitlines() => returen list : [line1 , line2 ,line3]
+# expandtabs(int) => grow size of tab
+# replace(Old Value, New Value, Count)
+# join(Iterable) => change list to string with seperatore
+
+### condition :
+
+# istitle() 
+# isspace()
+# islower()
+# isupper()	
+# isalnum()	=> just integer number .
+# isalpha()	
+# isdecimal() => double number
+# isnumeric() => not include 0,5 or -1 
+isidentifier() => check if this string is can to indentfire Variable .
+
+-----------------------------------------------------
+------------- Strings Formatting --------------------
+-----------------------------------------------------
+
+# need to concat difrent type of data in one outpute .
+-------------
+---- Old Ways :
+-------------
+
+# %s => String => controle number of character .
+# %d => Number
+# %f => Float , %.2f => 1.00 
+ex : print("My Name is: %s and My Age is: %d and My Rank is: %f" % (name, age, rank))
+-------------
+---- New Ways :
+-------------
+
+{}-{:.5s}-{:d}-{:.2f} {:_} : .format(value,value....)
+
+ex : 
+print("My Name is: {:s} Age: {:d} & Rank is: {:f}".format(name, age, rank))
+
+# Format Money :
+{:,d} => 1,222,125,211
+
+# ReArrange Items :
+print("letter : {3:s} {2:d} {1:.2f} {0}".format("D", 25, 1.00, "A"))
+
+# Format in Version 3.6+
+
+print(f"My Name is : {Variable1} and My Age is : {Variable2}")
+
+-------------------------------------------
+------------- Numbers  --------------------
+-------------------------------------------
+
+
+# int :
+1 , 10 , 100 , -10 
+-------
+# Float :
+-1,02 , 100,00 ,-100,25 
+-------
+# Complex number type :
+-------------------------
+----| EX: (5 + 10j) |----
+-------------------------
+# [1] You Can Convert From Int To Float or Complex
+# [2] You Can Convert From Float To Int or Complex
+# [3] You Cannot Convert Complex To Any Type
+
+(5 + 10j).real => 5
+(5 + 10j).img => 10
+
+number Method :
+
+int(5.25) => 5 
+float(5) => 5.00
+Complex(5) => 5+0j
+int(5+6j) => error
+float(5+6j) => error
+
+--------------------------------------------------------
+------------- Arithmetic Operators  --------------------
+--------------------------------------------------------
+# [+] Addition
+# [-] Subtraction
+# [*] Multiplication
+# [/] Division => float
+# [%] Modulus
+# [**] Exponent
+# [//] Floor Division 
+# --------------------------
+[//] : return devision of near posible number .
+
+8 // 2 => 4
+9 // 2 => 4
+
+
+--------------------------------------------------------
+-------------------   Lists   --------------------------
+--------------------------------------------------------
+
+# -----------
+# [1] List Items Are Enclosed in Square Brackets []
+# [2] List Are Ordered, To Use Index To Access Item : array[index]
+# [3] List Are Mutable => Add, Delete, Edit .
+# [4] List Items Is Not Unique
+# [5] List Can Have Different Data Types
+# -----------------------------
+
+myList = ["One", "Two", "One", 1, 100.5, True]
+
+print(myList[0])  => "One"  
+print(myList[-1]) => True 
+print(myList[0:2:1]) =>  ["One", "Two", "One"]
+-----------
+change value :
+-----------
+myList[0] = "Amin' 
+myList[:2] = ["amin","Love",1,True]
+------------
+remove :
+------------
+myList[0] = []
+myList[:2] = []
+
+---------------------
+---- list Method ----
+---------------------
+# append("element"or []) => add complet element into list
+# extend("element" or []) => add element after divisi 
+# remove("element") => remove first element you find
+# sort() : optional arg =>  reverse = false ,key = function
+# reverse() 
+# clear()
+# copy() 
+# count('element') => count of element
+# index()
+# insert(index,object) => add object before index.
+# pop(index) => remove item and return item 
+
+---------------------------------------------------------
+-------------------   Tuples   --------------------------
+---------------------------------------------------------
+# [1] Tuple Items Are Enclosed in Parentheses :         myTuple1 = (1,"amin",true) 
+# [2] You Can Remove The Parentheses () If You Want :      myTuple1 = 1,"amin",true
+# [3] Tuple Are Ordered, To Use Index To Access Item :  myTuple1[0]
+# [4] Tuple Are Immutable => You Cant Add or Delete  :  myTuple1[0] = 5 => Error
+# [5] Tuple Items Is Not Unique
+# [6] Tuple Can Have Different Data Types
+# [7] Operators Used in Strings and Lists Available In Tuples
+---------------------------------------------------------
+# count()
+# index()
+--------------------------------------
+- # Tuple, List, String Repeat (*) : -
+- "str" * 5                          -
+--------------------------------------
+syntx : 
+-------
+myTuple1 = (1,"amin",true) 
+------------
+# Tuple with One element ;
+-----------
+myTuple1 = "amin",
+myTuple2 = ("amin",)
+----------
+concat :
+----------
+print(a + b) => [1, 2, 3, 4, 5, 6, 7,"a", "b", "c", "d"] .
+
+------------------
+# Tuple Destruct ' _ to ignore' :
+------------------
+
+tuplex = ("amin","kloiu",4,"typing")
+
+a,b,_,d = tuplex
+
+
+---------------------------------------------------------
+-------------------    set     --------------------------
+---------------------------------------------------------
+# [1] Set Items Are Enclosed in Curly Braces {}
+# [2] Set Items Are Not Ordered And Not Indexed 
+# [3] Set Indexing and Slicing Cant Be Done
+# [4] Set Has Only Immutable Data Types (Numbers, Strings, Tuples) - List and Dict Are Not
+# [5] Set Items Is Unique : {1,2,3,1} => {1,2,3} 
+# -------------------------------------------------------
+# clear()
+# union() : set1.union(set2,set3,set4) => newset OR (set1 | set2) => newset
+# add()   
+# copy()
+# remove()
+# discard() : Like remove() but not return Error
+# pop() => remove random item and return this item .
+# update() : update this set .
+
+# difference() or (set1 - set2 ) : returen element in set1 and not found in set2 and return us new set . 
+# difference_update()   : Remove all elements of another set from this set.
+# intersection() or (set1 & set2 )       : Return the same value of two sets as a new set.
+# intersection_update() : Update a set with the intersection of itself and another.
+# symmetric_difference()  or (set1 ^ set2 ) : item not in set1 and not in set2 as a new set.
+# symmetric_difference_update()
+
+# issuperset()
+# issubset()
+# isdisjoint()
+
+---------------------------------------------------------
+-------------------    set     --------------------------
+---------------------------------------------------------
+# ----------------
+# [1] Dict Items Are Enclosed in Curly Braces
+# [2] Dict Items Are Contains Key : Value
+# [3] Dict Key Need To Be Immutable => (Number, String, Tuple) List Not Allowed
+# [4] Dict Value Can Have Any Data Types
+# [5] Dict Key Need To Be Unique
+# [6] Dict Is Not Ordered You Access Its Element With Key
+# ----------------------------
+
+Mydic = {
+    "name" : "Amin" ,
+    "Carer" : "Data Analytist",
+    "baby": {
+        "boy": "mohamed",
+        'girl': "firdouss"
+    }
+}
+add new item to dic :
+---------------------
+Mydic["key"] = value 
+
+get element:
+------------
+Mydic["name"] Or Mydic.get("name") => Amin
+
+edite item :
+------------
+user["name"] = "Rajae"
+
+get all keys and all values :
+-----------------------------
+Mydic.keys()
+Mydic.values()
+
+Dictionary From Variable :
+--------------------------
+myvarDic = {
+    "key1" : var1,
+    "Key2" : var2,
+    "key2" : var3
+}
+
+# ------------------------
+# -- Dictionary Methods --
+# ------------------------
+
+# clear()
+# update() : Mydic.update({"key":"value"}) : Add item to dic
+# copy()
+# keys() + values()
+# setdefault() :return value and add item if not found in dic , if not add value return None if not found key
+# popitem() : return last item and remove
+# items()   : return all dic as tuple into list and return with all changes
+# fromkeys() : dict.fromkeys(Iterable,object)
+# ------------------------
+
+
+---------------------------------------------------------
+-------------------   Boolean  --------------------------
+---------------------------------------------------------
+
+# True Values
+-------------
+print(bool("Osama"))
+print(bool(100))
+print(bool(100.95))
+print(bool(True))
+print(bool([1, 2, 3, 4, 5]))
+
+# False Values
+--------------
+print(bool(0))
+print(bool(""))
+print(bool(''))
+print(bool([]))
+print(bool(False))
+print(bool(()))
+print(bool({}))
+print(bool(None))
+
+# -----------------------
+# -- Boolean Operators --
+# -----------------------
+# and
+# or
+# not : write before condition
+# -----------------------
+# --------------------------
+# -- Assignment Operators --
+# --------------------------
+# =
+# +=
+# -=
+# *=
+# /=
+# **=
+# %=
+# //=
+# --------------------------
+# -- Comparison Operators --
+# --------------------------
+# [ == ] Equal
+# [ != ] Not Equal
+# [ > ] Greater Than
+# [ < ] Less Than
+# [ >= ] Greater Than Or Equal
+# [ <= ] Less Than Or Equal
+# --------------------------
+# ---------------------
+# -- Type Conversion --
+# ----------------------
