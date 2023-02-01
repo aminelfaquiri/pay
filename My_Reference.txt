@@ -457,3 +457,68 @@ print("Movie S Not Good 4U" if age < movieRate else "Movie S Good 4U And Happy W
 # in
 # not in
 # --------------------------
+name = "Osama"
+print("s" in name) => True
+print("a" in name) => True
+print("A" in name) => False
+
+-----------------------------------------------------------------------------------------
+--------------------------------------------- Loop --------------------------------------
+-----------------------------------------------------------------------------------------
+# -------------------
+# -- Loop => While --
+# -------------------
+# while condition_is_true
+#   Code 
+# -----------------------
+while a < 10 :
+    print(a)
+    a += 1
+else : code  # optinale run if condetion is false
+
+
+# -----------------
+# -- Loop => For --
+# -----------------
+# for item in iterable_object :
+#   Do Something With Item
+# -----------------------------
+# -----------------------------
+# item Is A Vairable You Create and Call Whenever You Want
+# item refer to the current position and will run and visit all items to the end
+# iterable_object => Sequence [ list, tuples, set, dict, string of charcaters, etc ... ]
+# ---------------------------------------------------------------
+# ---------------------------------------------------------------
+
+for i in list :
+    print(list[i])
+else : print("end loop")
+# ---------------------------
+# -- Break, Continue, Pass --
+# ---------------------------
+
+Pass : for pass the code not complate or empty and you dont want to remove . 
+
+# ------------------------------
+# -- Advanced Dictionary Loop --
+# ------------------------------
+
+for k, v in myUltimateSkills.items():
+
+    print(f'{k} :')
+    for kk, vv in v.items():
+        print(f"- {kk.lower()} => {vv}")
+
+
+
+-----------------------------------------------------------------------------------------
+------------------------------------ Function And Return --------------------------------
+-----------------------------------------------------------------------------------------
+
+def function_name():
+
+  return "Hello Python From Inside Function"
+
+dataFromFunction = function_name() 
+
+print(dataFromFunction)
