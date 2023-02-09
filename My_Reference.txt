@@ -219,8 +219,8 @@ myList[:2] = []
 ---------------------
 ---- list Method ----
 ---------------------
-# append("element"or []) => add complet element into list
-# extend("element" or []) => add element after divisi 
+# append("element"or []) 
+# extend("element" or []) => add element after divisi list
 # remove("element") => remove first element you find
 # sort() : optional arg =>  reverse = false ,key = function
 # reverse() 
@@ -522,3 +522,352 @@ def function_name():
 dataFromFunction = function_name() 
 
 print(dataFromFunction)
+
+# -------------------------------------------------
+# -- Function Packing, Unpacking Arguments *Args --
+# -------------------------------------------------
+
+[1,2,3,4,5,2,3] to Unpack => *[[1,2,3,4,5,2,3]] => 1, 2, 3, 4, 5, 2, 3 :
+
+####################################
+####### add multiarg arg ###########
+####################################
+
+def hello(arg,*argslist) :
+    for i in argslist :
+        print("Hello {arg} => {i}")
+
+
+####################################
+####### Default Parameters #########
+####################################
+
+def say_Hello(name="Rajae", age = "Unckone"):
+
+    print(f"hello {name}")
+
+# ----------------------------------------------------
+# -- Function Packing, Unpacking Arguments **KWArgs --
+# ----------------------------------------------------
+# this Unpacking for dict 
+# ----------------------------------------------------
+
+def show_skills(**skills) :  => **skills == Dictionary
+
+  print(type(skills))
+
+  for skill, value in skills.items():
+
+    print(f"{skill} => {value}")
+
+show_skills(a = "80%" , b = "70%" )
+or 
+show_skills(**Dictionary)
+
+# --------------------
+# -- Function Scope --
+# --------------------
+# global Variable
+# --------------------
+
+x = 1  # Global Scope
+
+def one():
+
+  global x
+
+  x = 2
+
+# ------------------------
+# -- Function Recursion --
+# ------------------------
+
+--------------
+ -- Exemple --
+--------------
+def cleanWord(word):
+
+  if len(word) == 1:
+
+    return word
+
+  print(f"Print Start Function {word}")
+
+  if word[0] == word[1]:
+
+    print(f"Print Before Condition {word}")
+
+    return cleanWord(word[1:])
+
+  print(f"Print Before Return {word}")
+
+  return word[0] + cleanWord(word[1:])
+
+  # Stash [ World ]
+
+print(cleanWord("WWWoooorrrldd"))
+
+# ------------------------
+# -- Function => lambda --
+# -- Anonymous Function --
+# ------------------------
+# [1] It Has No Name
+# [2] You Can Call It Inline Without Defining It
+# [3] You Can Use It In Return Data From Another Function
+# [4] Lambda Used For Simple Functions and Def Handle The Large Tasks
+# [5] Lambda is One Single Expression not Block Of Code
+# [6] Lambda Type is Function
+# -------------------------------------------------------------------
+
+syntax :
+
+VariableName = lambda param1, param2 : return "Hello My {param1} and {param2}"
+
+----------------------------------------------------------------------------
+--------------------------------- Modules  ---------------------------------
+----------------------------------------------------------------------------
+# ---------------------------------
+# -- Modules => Built In Modules --
+# ---------------------------------
+# [1] Module is A File Contain A Set Of Functions
+# [2] You Can Import Module in Your App To Help You
+# [3] You Can Import Multiple Modules
+# [4] You Can Create Your Own Modules
+# [5] Modules Saves Your Time
+# --------------------------------------------------
+
+# Show All Functions Inside Module :
+print(dir(random))
+
+# Import One Or Two Functions From Module :
+from random import randint, random, ...
+
+# -----------------------------------
+# -- Modules => Create Your Module --
+# -----------------------------------
+
+create file.py and add some function 
+and : import file 
+
+# Alias
+
+import File as fl
+from file import SayLove as slv
+
+# ------------------------------------------
+# -- Modules => Install External Packages --
+# ------------------------------------------
+# [1] Module vs Package
+# [2] External Packages Downloaded From The Internet
+# [3] You Can Install Packages With Python Package Manager PIP
+# [4] PIP Install the Package and Its Dependencies
+# [5] Modules List "https://docs.python.org/3/py-modindex.html"
+# [6] Packages and Modules Directory "https://pypi.org/"
+# [7] PIP Manual "https://pip.pypa.io/en/stable/reference/pip_install/"
+# ---------------------------------------------------------------------
+
+# comond line :
+# pip install packegeName pack2 ... 
+
+# -------------------
+# -- File Handling --
+# -------------------
+# "r" Read    [Default Value] Open File For Read and Give Error If File is Not Exists
+# "x" Create  Create File, Give Error If File Exists
+# "a" Append  Open File For Appending Values, Create File If Not Exists
+# "w" Write   Open File For Writing, Create File If Not Exists, clear file befor write
+# --------------------------------------------------
+
+file = open(r"D:\Python\Files\nfiles\osama.txt","tex-tMode : r, x, a, w") # r in first text is to egnore scape seqence .
+
+----------------------------------------------------
+# --------------------------------
+# -- File Handling => Read File --
+# ------------- r ----------------
+# --------------------------------
+
+# -----------------
+# read(x)
+# readline(x)
+# readlines(x)
+# close()
+# -----------------
+
+# -----------------------------------------------
+# -- File Handling => Write and Append In File --
+# -----------------------------------------------
+
+# write(str) 
+# writelines(list)
+# truncate(x) : إبقاء عدد حروف محدد و الحدف الباقي كله
+# tell() : position of curser 
+# seek(x) : change position ocurser to read file from speciale position 
+
+----------------------------------------------------------------------------
+--------------------------------- Built In Functions  ----------------------
+----------------------------------------------------------------------------
+
+# ------------------------
+# all() : return true if all object is true
+# any() : return true if just one or more is true
+# bin(int)  :Return the binary representation of an integer.
+# id()
+# sum(Iterable,start)  : start is number to add in this is sum 
+# round() : round(5.500) => 6 | round(5.50,2) => 6.50
+# range(start,end,step) : => list(start,end) => [start,.....,End - 1]
+# print() => par : sep ,end
+# abs() : القيمة المطلقة وهي المسافة بين الرقم والصفر ودائما موجبة 
+# pow() : pow(2,3,5) : 2 ** 3 % 5
+# min() : return minimal number
+# max() : return max number
+# slice(start,stop,step) : slice(stop)
+# ------------------------
+
+# -------------------------------
+# -- Built In Functions => Map --
+# -------------------------------
+# [1] Map Take A Function + Iterator
+# [2] Map Called Map Because It Map The Function On Every Element
+# [3] The Function Can Be Pre-Defined Function or Lambda Function
+# ---------------------------------------------------------------
+# map(function,Iterable)
+#######
+# Ex :#
+#######
+  myLover = ["Zineb", "Rajae", "Salwa", "Ibtissam", "Lamiae"]
+
+  love = map((lambda name: f"I Love You {name}"), myLover)
+
+  for i in love:
+      print(i)
+  
+# ----------------------------------
+# -- Built In Functions => Filter --
+# ----------------------------------
+# [1] Filter Take A Function + Iterator
+# [2] Filter Run A Function On Every Element
+# [3] The Function Can Be Pre-Defined Function or Lambda Function
+# [4] Filter Out All Elements For Which The Function Return True
+# [5] The Function Need To Return Boolean Value
+# ---------------------------------------------------------------
+# Filter(Function,iterable)
+#######
+# Ex :#
+#######
+
+myLover = ["Zineb", "Rajae", "Salwa", "Ibtissam", "Lamiae"]
+
+def checkLove(name):
+    return len(name) > 5
+
+# filt = filter(checkLove, myLover)
+
+or :
+
+filt = filter((lambda name: len(name) > 5), myLover)
+
+for love in filt:
+    print(love)
+
+# ----------------------------------
+# -- Built In Functions => Reduce --
+# ----------------------------------
+# [1] Reduce Take A Function + Iterator
+# [2] Reduce Run A Function On FIrst and Second Element And Give Result
+# [3] Then Run Function On Result And Third Element
+# [4] Then Run Function On Rsult And Fourth Element And So On
+# [5] Till One ELement is Left And This is The Result of The Reduce
+# [6] The Function Can Be Pre-Defined Function or Lambda Function
+# ---------------------------------------------------------------
+# Result = reduce(function,sequence,initial)
+#######
+# Ex :#
+#######
+from functools import reduce
+
+myLover = ["Zineb", "Rajae", "Salwa", "Ibtissam", "Lamiae"]
+
+def concat(str1, str2):
+    return str1 + " - " + str2
+
+Result = reduce(concat, myLover, "Amin Love")
+
+print(Result)
+
+# ------------------------
+# -- Built In Functions --
+# ------------------------
+# enumerate() : type => <class 'enumerate'>
+# help()
+# reversed() : reverse iterable , type : 
+# ------------------------
+###################################
+#### enumerate(iterable, start) ###
+###################################
+
+myLover = ["Zineb", "Rajae", "Salwa", "Ibtissam", "Lamiae"]
+
+orderlist = enumerate(myLover, 50)
+
+for num, name in orderlist:
+    print(f"{num} => {name}")
+
+
+
+----------------------------------------------------------------------------
+--------------------------------- Date Time  -------------------------------
+----------------------------------------------------------------------------
+
+# -----------------------------------
+# -- Date and Time => Introduction --
+# -----------------------------------
+#
+# import datetime
+# Print The Current Date and Time
+print(datetime.datetime.now())
+print(datetime.datetime.now().year)
+print(datetime.datetime.now().month)
+print(datetime.datetime.now().day)
+
+# Print Start and End Of Date
+print(datetime.datetime.min)
+print(datetime.datetime.max)
+
+# Print The Current Time
+print(datetime.datetime.now().time())
+print(datetime.datetime.now().time().hour)
+print(datetime.datetime.now().time().minute)
+print(datetime.datetime.now().time().second)
+
+# Print Start and End Of Time
+print(datetime.time.min)
+print(datetime.time.max)
+
+# Print Specific Date
+print(datetime.datetime(2000, 12, 13))
+
+# calcule Time and Date
+
+myBirthDay = datetime.datetime(2002, 5, 3)
+dateNow = datetime.datetime.now()
+
+print((dateNow - myBirthDay).days)
+
+# ----------------------------------
+# -- Date and Time => Format Date --
+# ----------------------------------
+# https://strftime.org/
+# ----------------------------------
+# datetime.datetime.strftime()
+# ----------------------------------
+# remember set time befor format its
+
+# import datetime
+
+# myBirthday = datetime.datetime(1982, 10, 25)
+
+print(myBirthday.strftime("%d %B %Y"))
+print(myBirthday.strftime("%d, %B, %Y"))
+print(myBirthday.strftime("%d/%B/%Y"))
+print(myBirthday.strftime("%d - %B - %Y"))
+print(myBirthday.strftime("%B - %Y"))
