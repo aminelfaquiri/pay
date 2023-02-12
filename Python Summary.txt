@@ -871,3 +871,50 @@ print(myBirthday.strftime("%d, %B, %Y"))
 print(myBirthday.strftime("%d/%B/%Y"))
 print(myBirthday.strftime("%d - %B - %Y"))
 print(myBirthday.strftime("%B - %Y"))
+
+
+----------------------------------------------------------------------------
+--------------------------------- SQL Lite  -------------------------------
+----------------------------------------------------------------------------
+
+# ------------------------
+# -- Databases => Intro --
+# ------------------------
+# - Database Is A Place Where We Can Store Data
+# - Database Organized Into Tables (Users, Categories)
+# - Tables Has Columns (ID, Username, Password)
+# - There's Many Types Of Databases (MongoDB, MySQL, SQLite)
+# - SQL Stand For Structured Query Language
+# - SQLite => Can Run in Memory or in A Single File
+# - You Can Browse File With https://sqlitebrowser.org/
+# - Data Inside Database Has Types (Text, Integer, Date)
+# ------------------------------------------------------
+
+# --------------------------------------------------------
+# -- Databases => SQLite => Create Database And Connect --
+# --------------------------------------------------------
+# - Connect("name of data base create if not existe")
+# - Execute("SQL Query")
+# - Close
+# --------------------------------------------------
+
+# Import SQLite Module
+import sqlite3
+
+# Create Database And Connect
+db = sqlite3.connect("app.db")
+
+# Create The Tables and Fields
+db.execute(
+    "CREATE TABLE IF NOT EXISTS skills (name text, progress integer, user_id integer)")
+
+# Close Database
+db.close()
+
+# ------------------------------------------------------
+# -- Databases => SQLite => Insert Data Into Database --
+# ------------------------------------------------------
+# - cursor => All Operation in SQL Done By Cursor Not The Connection Itself
+# - commit => Save All Changes
+# ------------------------------------------------------
+

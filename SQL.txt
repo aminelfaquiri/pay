@@ -1,0 +1,4 @@
+# CREATE DATABASE
+# CREATE TABLE TabelName (field1 datatype, field2 datatype,.....)
+# CREATE TABLE IF NOT EXISTS TabelName 
+# INSERT INTO TabelName(field1, field2) VALUES(value1,value2)
