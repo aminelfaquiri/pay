@@ -874,6 +874,42 @@ print(myBirthday.strftime("%B - %Y"))
 
 
 ----------------------------------------------------------------------------
+--------------------------------- Exceptions Handling  ---------------------
+----------------------------------------------------------------------------
+
+# -----------------------------------
+# -- Try | Except | Else | Finally --
+# -----------------------------------
+# Try     => Test The Code For Errors
+# Except  => Handle The Errors
+# ----------------------------
+# Else    => If No Errors
+# Finally => Run The Code
+# ------------------------
+
+try:
+    age = int(input("name :"))
+
+except SyntaxError:
+    print("syntax Error")
+
+except ZeroDivisionError:
+    print("ZeroDivisionError Error")
+
+except NameError:
+    print("NameError Error")
+
+except:
+    print("Error Happen")
+
+else:  # If Theres No Errors
+    print("Not Error")
+    
+finally:  # Print From Finally Whatever Happens
+    print("My Finally")
+
+
+----------------------------------------------------------------------------
 --------------------------------- SQL Lite  -------------------------------
 ----------------------------------------------------------------------------
 
@@ -917,4 +953,104 @@ db.close()
 # - cursor => All Operation in SQL Done By Cursor Not The Connection Itself
 # - commit => Save All Changes
 # ------------------------------------------------------
+###################################
+# use curser is the best practes :#
+###################################
+# import sqlite3
 
+# db = sqlite3.connect("app.db")
+
+# setting curser :
+cr = db.cursor()
+
+# create Table :
+# cr.execute("CREATE TABLE IF NOT EXISTS User_Client (user_id, name)")
+
+myNAme = ["amin", "hamid", "khalid"]
+
+for k, name in enumerate(myNAme, 1):
+    db.execute(f"INSERT INTO User_Client(user_id, name) VALUES({k},'{name}')")
+
+# commit is to save change :
+# db.commit()
+
+# db.close()
+
+# --------------------------------------------------------
+# -- Databases => SQLite => Retrieve Data From Database --
+# --------------------------------------------------------
+# - fetchone => returns a single record or None if no more rows are available.
+# - fetchall => fetches all the rows of a query result. It returns all the rows
+#               as a list of tuples. An empty list is returned if there is no record to fetch.
+# - fetchmany(size) =>
+# ------------------------------------------------------
+
+# afte creat db Connection and creat table and insert data :
+
+# ---------------------------------------------------
+# ------------  Training On Everything --------------
+# ---------------------------------------------------
+
+def get_all_Data():
+
+    try:
+        db = sqlite3.connect("app.db")
+        cr = db.cursor()
+        cr.execute("SELECT * FROM user")
+        MyData = cr.fetchall()
+        print(f"Data Base Has {len(MyData)} Rows")
+
+        for k, v in MyData:
+            print(f'Name : {v}, UserId : {k}')
+
+    except sqlite3.Error as se:
+        print(f"Connect is Field! , Erorr {se}")
+
+    finally:
+        if (db):
+            db.close()
+            print("Connection Is close ")
+
+
+get_all_Data()
+
+# ----------------------------------------------
+# -- Databases => SQLite => Update and Delete --
+# ----------------------------------------------
+
+import sqlite3
+
+db = sqlite3.connect("app.db")
+
+cr = db.cursor()
+
+# Update :
+cr.execute("UPDATE user SET name ='Rajae' WHERE user_id = 1 ")
+cr.execute("UPDATE user SET name = 'Amin' WHERE user_id = 2 ")
+cr.execute("UPDATE user SET name ='Zineb' WHERE user_id = 3 ")
+
+cr.execute("DELETE FROM user WHERE name = 'Zineb'")
+
+cr.execute("SELECT * FROM user")
+
+MyData = cr.fetchall()
+
+print(MyData)
+
+db.commit()
+
+db.close()
+
+# ---------------------------------------------------
+# -------------------- Web Scraping -----------------
+# ---------------------------------------------------
+# ---------------------------------------------------
+# - Control Browser With Selenium For Automated Testing
+# - Download File From The Internet
+# - Subtitle Download And Add On Your Movies [ Many Modules ]
+# - Get Quotes From Websites
+# - Get Gold and Currencies Rate
+# - Get News From Websites
+# - --------------------------------------------
+
+ 

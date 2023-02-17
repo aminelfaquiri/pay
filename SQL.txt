@@ -1,4 +1,49 @@
+-----------------------------------------------------
+---------------- Create DB --------------------------
+-----------------------------------------------------
+
 # CREATE DATABASE
+
+-----------------------------------------------------
+---------------- Create Tabel -----------------------
+-----------------------------------------------------
+
 # CREATE TABLE TabelName (field1 datatype, field2 datatype,.....)
 # CREATE TABLE IF NOT EXISTS TabelName 
+
+---------------------------------------------------
+---------------- Add Data -------------------------
+---------------------------------------------------
+
 # INSERT INTO TabelName(field1, field2) VALUES(value1,value2)
+# INSERT INTO TabelName VALUES(value1,value2) # if you add all values in fields dont us fiels name
+
+---------------------------------------------------
+---------------- Get Data -----------------------
+---------------------------------------------------
+
+# SELECT FieldsName,... FROM TabelName 
+# SELECT DISTINCT FieldsName FROM TabelName => ' get unique data '
+"SELECT COUNT(DISTINCT FieldsName) FROM TabelName" => 'Get Number Of selector'
+# SELECT * FROM TabelName 
+# SELECT * FROM TabelName order by fieldname 
+# SELECT * FROM TabelName order by desc 
+# SELECT * FROM TabelName order by fieldname limit 2
+# SELECT * FROM MySkills  order by skil limit 3 offset 2 => start with row number 3
+# SELECT * FROM MySkills WHERE prograsse > 60
+# SELECT * FROM MySkills WHERE prograsse not in (50,100)
+
+---------------------------------------------------
+---------------- Get Order Data -------------------
+---------------------------------------------------
+
+# SELECT * FROM TabelName order By 
+---------------------------------------------------
+---------------- Update Data ----------------------
+---------------------------------------------------
+# UPDATE TabelName SET field ='Rajae' WHERE user_id = 1
+
+---------------------------------------------------
+---------------- Delete Data ----------------------
+---------------------------------------------------
+# DELETE FROM TabelName WHERE FieldName = 'Zineb'
