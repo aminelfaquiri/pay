@@ -11,7 +11,7 @@ cr.execute(
 # cr.execute("INSERT INTO MyLove(name,age,prog) VALUES('zineb',20,80) ")
 
 # cr.execute("SELECT COUNT(*) FROM MyLove")
-cr.execute("SELECT * FROM MyLove")
+cr.execute("SELECT name FROM MyLove ORDER BY name ")
 # cr.execute("SELECT name FROM MyLove")
 
 print(cr.fetchall())

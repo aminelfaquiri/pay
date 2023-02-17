@@ -1,3 +1,8 @@
+NoN Compres :
+-
+SELECT Count(*) AS DistinctCountries FROM (SELECT DISTINCT Country FROM Customers);
+-
+
 -----------------------------------------------------
 ---------------- Create DB --------------------------
 -----------------------------------------------------
@@ -33,11 +38,67 @@
 # SELECT * FROM MySkills WHERE prograsse > 60
 # SELECT * FROM MySkills WHERE prograsse not in (50,100)
 
----------------------------------------------------
----------------- Get Order Data -------------------
----------------------------------------------------
 
-# SELECT * FROM TabelName order By 
+---------------------------------------------------------------------
+---------------- Operators in The WHERE Clause ----------------------
+---------------------------------------------------------------------
+
+# = , < , >, =>, =<, 
+# <> or !=
+# BETWEEN : Ex: " SELECT name FROM MyLove WHERE prog BETWEEN 0 AND 50 "
+# LIKE    : SELECT column1 FROM tableName WHERE columnN LIKE pattern :
+=> pattern :
+    -   'a%'   : Finds any values that start with "a"  
+    -   '%a'   : Finds any values that end with "a"
+    -   '%or%' : Finds any values that have "or" in any position
+    -   '_r%'  : Finds any values that have "r" in the second position
+    -   'a_%'  : Finds any values that start with "a" and are 2 characters minimaux in length
+    -   'a__%' : Finds any values that start with "a" and are 3 characters minimaux in length
+    -   'a%o'  : Finds any values that start with "a" and ends with "o"
+
+# IN      : SELECT * FROM tableName WHERE City IN ('Paris','London') ;
+
+---------------------------------------------------------------------
+----------------------- AND, OR, NOT Operators ----------------------
+---------------------------------------------------------------------
+
+--- NOT Syntax :
+
+# SELECT column1, column2, ...
+# FROM table_name
+# WHERE condition1 AND condition2 AND condition3 ...;
+
+--- OR Syntax :
+
+# SELECT column1, column2, ...
+# FROM table_name
+# WHERE condition1 OR condition2 OR condition3 ...;
+
+--- NOT Syntax :
+
+# SELECT column1, column2, ...
+# FROM table_name
+# WHERE NOT condition;
+
+---------------------------------------------------------------------
+----------------------- SQL ORDER BY Keyword  -----------------------
+---------------------------------------------------------------------
+
+# SELECT column1, column2, ...
+# FROM table_name
+# ORDER BY column1, column2, ... ASC|DESC;
+
+# SELECT * FROM table_name
+# ORDER BY column1 ASC, column2 DESC;
+
+-------------------------------------------------------------------------------------
+-  sorted by the "Country" and the "CustomerName" column.
+-  This means that it orders by column1, but if some rows have the same column1,
+-  it orders them by column2
+-------------------------------------------------------------------------------------
+
+
+
 ---------------------------------------------------
 ---------------- Update Data ----------------------
 ---------------------------------------------------
@@ -47,3 +108,7 @@
 ---------------- Delete Data ----------------------
 ---------------------------------------------------
 # DELETE FROM TabelName WHERE FieldName = 'Zineb'
+
+
+
+
